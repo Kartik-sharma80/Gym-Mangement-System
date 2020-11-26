@@ -1,0 +1,40 @@
+{% extends 'navigationbar.html' %}
+
+{% block body %}
+
+
+<div class="Container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">Add Enquiry</h2>
+    <form style="margin-left:200px; margin-right:200px" method="post">
+        {% csrf_token %}
+        <label><b>Name</b></label>
+        <input type="text" name="name" class="form-control" required>
+        <label><b>Contact</b></label>
+        <input type="number" name="contact" class="form-control" required>
+        <label><b>Email</b></label>
+        <input type="email" name="email" class="form-control" required>
+        <label><b>Age</b></label>
+        <input type="number" name="age" class="form-control"  value="0" required>
+        <br>
+        <label><b>Gender</b></label>
+        <br>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <br>
+        <input type="submit" class="btn btn-primary form-control" value="Submit">
+    </form>
+</div>
+
+ {% ifequal error "No" %}
+        <script>
+            alert('Record Saved Successfully');
+            window.Location=('{% url 'view_enquiry' %}')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "Yes" %}
+        <script>
+            alert('Something went wrong, Try Again');
+        </script>
+    {% endifequal %}
+{% endblock %}

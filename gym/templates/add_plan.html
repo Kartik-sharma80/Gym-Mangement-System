@@ -1,0 +1,32 @@
+{% extends 'navigationbar.html' %}
+
+{% block body %}
+
+
+<div class="Container" style="margin-top:60px">
+    <h2 class="text-center text-primary font-weight-bold">Add Equipment</h2>
+    <form style="margin-left:200px; margin-right:200px" method="post">
+        {% csrf_token %}
+        <label><b>Plan Name</b></label>
+        <input type="text" name="name" class="form-control" required>
+        <label><b>Amount(In Rs.)</b></label>
+        <input type="number" name="amount" class="form-control" value="0.00" required>
+        <label><b>Duration(In Month)</b></label>
+        <input type="number" name="duration" class="form-control" value="0" required>
+         <br>
+        <input type="submit" class="btn btn-primary form-control" value="Submit">
+    </form>
+</div>
+{% ifequal error "No" %}
+        <script>
+            alert('Record Saved Successfully');
+            window.Location=('{% url 'view-equipment' %}')
+        </script>
+    {% endifequal %}
+
+    {% ifequal error "Yes" %}
+        <script>
+            alert('Something went wrong, Try Again');
+        </script>
+    {% endifequal %}
+{% endblock %}
