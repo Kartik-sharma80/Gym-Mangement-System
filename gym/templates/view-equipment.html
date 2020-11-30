@@ -1,0 +1,35 @@
+{% extends 'navigationbar.html' %}
+
+{% block body %}
+
+
+<div class="Container" style="margin-top:60px;margin-left:50px; margin-right:50px">
+    <h2 class="text-center text-primary font-weight-bold">View Equipment</h2>
+    <br>
+    <table id="example" class="table table-hover display">
+        <thead>
+            <tr align="center">
+                <th>EquipmentName</th>
+                <th>Price</th>
+                <th>Unit</th>
+                <th>PurchaseDate</th>
+                <th>Description</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in equipment %}
+            <tr align="center">
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.unit}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.description}}</td>
+                <td><a class="btn btn-danger" href="{% url 'delete_equipment' i.id %}" onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
