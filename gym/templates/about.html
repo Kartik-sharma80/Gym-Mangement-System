@@ -1,7 +1,24 @@
 {% extends 'navigationbar.html' %}
 
+{% load static %}
+
 {% block body %}
 
-<h1>About Us</h1>
-
+<div class="Container" style="margin-top:60px; margin-left:50px; margin-right:50px">
+    <h2 class="text-center text-dark font-weight-bold">About Us</h2>
+    <br>
+    <div class="row">
+        <div class="col-sm-4 text-center ">
+            <img src="{% static 'images/images.png' %}" width="300" height="200" class="img-responsive">
+        </div>
+        <div class="col-sm-8 text-center mt-5">
+            <b>Hello Friends<br>
+            This is simple Gym Management Project developed by<br>kartik sharma<br> using
+                Python, Django, HTML, CSS, JavaScript and bootstrap.</b>
+        </div>
+    </div>
+</div>
+<footer class="text-center font-weight-bold" style="margin-top:200px;">
+    <h2>Copyright &copy; 2020, All Rights reserved</h2>
+</footer>
 {% endblock %}

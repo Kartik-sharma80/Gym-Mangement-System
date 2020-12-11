@@ -14,7 +14,7 @@
                 <th>EmailID</th>
                 <th>Age</th>
                 <th>Gender</th>
-                <th>Remove</th>
+                
             </tr>
         </thead>
 
@@ -26,7 +26,7 @@
                 <td>{{i.emailid}}</td>
                 <td>{{i.age}}</td>
                 <td>{{i.gender}}</td>
-                <td><a class="btn btn-danger" href="{% url 'delete_enquiry' i.id %}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                
             </tr>
             {% endfor %}
         </tbody>

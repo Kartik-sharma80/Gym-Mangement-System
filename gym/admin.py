@@ -1,8 +1,4 @@
 from django.contrib import admin
-from .models import Enquiry, Equipment, Plan, Member
-
+from .models import Enquiry
 # Register your models here.
 admin.site.register(Enquiry),
-admin.site.register(Equipment),
-admin.site.register(Plan),
-admin.site.register(Member),
